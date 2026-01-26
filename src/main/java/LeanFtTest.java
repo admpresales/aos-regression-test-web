@@ -124,9 +124,7 @@ public class LeanFtTest extends UnitTestClassBase {
         VerificationParameter verificationParameter2 = new VerificationParameter("Expected ", "SPEAKERS");
         verificationData.verificationParameters.add(verificationParameter1);
         verificationData.verificationParameters.add(verificationParameter2);
-        if (System.getProperty("os.name").toLowerCase().contains("windows") || System.getProperty("os.name").toLowerCase().contains("mac")) {
-            verificationData.image = browser.getSnapshot();
-        }
+        verificationData.image = browser.getSnapshot();
 
         // Compare against expected result "SPEAKERS" and write to the test report
         Boolean label_says_SPEAKERS = label_text.contentEquals("SPEAKERS");
